@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXOE AI</title>
+<style>
+body {
+  background:#090909;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:20px;
+}
+h1 {color:#ff3030;font-size:36px}
+.card {
+  background:#191919;
+  border:1px solid #ff3030;
+  border-radius:15px;
+  padding:18px;
+  margin:15px 0;
+}
+button {
+  background:#e52222;
+  color:white;
+  border:0;
+  padding:13px;
+  border-radius:10px;
+  width:100%;
+  font-size:16px;
+}
+select {
+  padding:12px;
+  width:100%;
+  border-radius:8px;
+}
+</style>
+</head>
+<body>
+<h1>NEXOE AI</h1>
+<p>Mobile Legends Intelligence</p>
+
+<div class="card">
+<h3>Выбери героя</h3>
+<select id="hero">
+<option>Belerick</option>
+<option>Suyou</option>
+<option>Obsidia</option>
+<option>Paquito</option>
+<option>Vexana</option>
+<option>Roger</option>
+<option>Hilda</option>
+</select>
+</div>
+
+<div class="card">
+<h3>Анализ героя</h3>
+<button onclick="analyze()">Анализировать</button>
+<p id="result">Выбери героя для начала анализа.</p>
+</div>
+
+<script>
+function analyze() {
+ const hero=document.getElementById('hero').value;
+ document.getElementById('result').innerText=
+ 'Выбран герой: '+hero+
+ '. NEXOE AI готовит рекомендации.';
+}
+</script>
+</body>
+</html>
