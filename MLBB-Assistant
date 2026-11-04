@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLBB Assistant PRO</title>
+<style>
+body{margin:0;background:#080b12;color:white;font-family:Arial}
+header{padding:24px;text-align:center;background:#151b29;color:#ff3030;font-size:25px;font-weight:bold}
+main{padding:16px}
+.card{background:#171e2c;padding:20px;margin:14px 0;border-radius:14px}
+select,button{width:100%;padding:14px;border:0;border-radius:8px;margin-top:10px;font-size:16px}
+select{background:#293348;color:white}
+button{background:#e52b36;color:white;font-weight:bold}
+.item{padding:10px;background:#252e40;margin:7px 0;border-radius:7px}
+</style>
+</head>
+<body>
+<header>MLBB ASSISTANT PRO</header>
+<main>
+<div class="card">
+<h2>Выбор героя</h2>
+<select id="hero" onchange="showHero()">
+<option value="belerick">Belerick</option>
+<option value="lesley">Lesley</option>
+<option value="obsidia">Obsidia</option>
+<option value="paquito">Paquito</option>
+<option value="vexana">Vexana</option>
+<option value="roger">Roger</option>
+<option value="hilda">Hilda</option>
+</select>
+</div>
+<div class="card">
+<h2 id="name">Belerick</h2>
+<h3>Рекомендуемая сборка</h3>
+<div id="build"></div>
+<h3>Совет</h3>
+<p id="tip"></p>
+</div>
+</main>
+<script>
+const heroes={
+belerick:{name:"Belerick",build:["Tough Boots","Cursed Helmet","Dominance Ice","Guardian Helmet","Antique Cuirass","Immortality"],tip:"Принимай урон и защищай союзников."},
+lesley:{name:"Lesley",build:["Swift Boots","Berserker's Fury","Endless Battle","Blade of Despair","Malefic Roar","Wind of Nature"],tip:"Держи дистанцию и атакуй с безопасной позиции."},
+obsidia:{name:"Obsidia",build:["Swift Boots","Corrosion Scythe","Demon Hunter Sword","Golden Staff","Malefic Roar","Wind of Nature"],tip:"Используй дистанцию и не отдавай позицию."},
+paquito:{name:"Paquito",build:["Tough Boots","Hunter Strike","War Axe","Blade of Despair","Queen's Wings","Immortality"],tip:"Используй комбинации навыков, контролируй пассивный заряд и выбирай момент для атаки."},
+vexana:{name:"Vexana",build:["Arcane Boots","Genius Wand","Lightning Truncheon","Holy Crystal","Divine Glaive","Blood Wings"],tip:"Держись позади команды и контролируй противников."},
+roger:{name:"Roger",build:["Swift Boots","Haas's Claws","Corrosion Scythe","Demon Hunter Sword","Malefic Roar","Immortality"],tip:"Меняй форму в зависимости от дистанции и ситуации."},
+hilda:{name:"Hilda",build:["Tough Boots","War Axe","Dominance Ice","Antique Cuirass","Queen's Wings","Immortality"],tip:"Используй кусты и помогай команде создавать давление."}
+};
+function showHero(){
+const hero=heroes[document.getElementById("hero").value];
+document.getElementById("name").innerText=hero.name;
+document.getElementById("build").innerHTML=hero.build.map((x,i)=>`<div class="item">${i+1}. ${x}</div>`).join("");
+document.getElementById("tip").innerText=hero.tip;
+}
+showHero();
+</script>
+</body>
+</html>
