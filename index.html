@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLBB Assistant</title>
+<style>
+body {
+  margin: 0;
+  background: #080b12;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+header {
+  background: #151b29;
+  padding: 25px;
+  color: #ff3030;
+  font-size: 25px;
+  font-weight: bold;
+}
+.card {
+  background: #171e2c;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+button {
+  background: #e52b36;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+select {
+  padding: 12px;
+  background: #252e40;
+  color: white;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<header>MLBB ASSISTANT</header>
+
+<div class="card">
+<h2>Выбор героя</h2>
+<select id="hero">
+<option>Leomord</option>
+<option>Paquito</option>
+<option>Fanny</option>
+<option>Hayabusa</option>
+<option>Ling</option>
+<option>Yu Zhong</option>
+</select>
+</div>
+
+<div class="card">
+<h2>Помощник по игре</h2>
+<p>Подбирай героя и получай советы по игре.</p>
+<button onclick="analyze()">Анализировать</button>
+<p id="result"></p>
+</div>
+
+<div class="card">
+<h2>Сервер</h2>
+<p>Москва 🇷🇺</p>
+</div>
+
+<script>
+function analyze() {
+ const hero = document.getElementById("hero").value;
+ document.getElementById("result").innerText =
+ "Выбран герой: " + hero +
+ ". Изучите сборку, контрпики и тактику.";
+}
+</script>
+
+</body>
+</html>
